@@ -1,0 +1,68 @@
+baseURL: https://8567.me/
+locale: en-AU
+title: AI Decoded | Erick Ramirez
+theme: PaperMod
+
+enableInlineShortcodes: true
+
+params:
+  env: dev # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Articles, blogs and tutorials about AI, databases and software development"
+  author: Erick Ramirez
+
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+  
+  defaultTheme: auto
+  ShowShareButtons: true
+  ShowReadingTime: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+
+  homeInfoParams:
+    Title: "Hi, I'm Erick 👋"
+    Content: |
+      I work with AI, databases, and software every day — and I write about what I learn along the way.
+      Expect honest takes, practical tutorials, and the occasional deep dive.
+      
+      I share what's useful, straight from real world experience. No fluff, no hype.
+
+  socialIcons:
+    - name: GitHub
+      title: Mostly open-source
+      url: "https://github.com/ErickRamirezAU"
+    - name: X
+      title: I share my thoughts here
+      url: "https://x.com/ErickRamirezAU"
+    - name: LinkedIn
+      title: Connect with me
+      url: "https://www.linkedin.com/in/ErickRamirez/"
+    - name: Medium
+      title: I publish here too
+      url: "https://medium.com/@ErickRamirezAU"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 20
