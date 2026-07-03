@@ -24,13 +24,14 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy via rsync
-        uses: Burnett01/rsync-deployments@7.0.2
+      - name: Deploy via SFTP
+        uses: wangyucode/sftp-upload-action@v3
         with:
-          switches: -avzr --delete --exclude=cgi-bin --exclude=.well-known
-          path: public/
-          remote_path: public_html/
-          remote_host: 8567.me
-          remote_port: 22
-          remote_user: rg2w8wm0lszh
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: 8567.me
+          port: 22
+          username: rg2w8wm0lszh
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
+          localDir: public/
+          remoteDir: public_html/
+          exclude: '**/cgi-bin/**,**/.well-known/**'
+          removeExtraFilesOnServer: true
