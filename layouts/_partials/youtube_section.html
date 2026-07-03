@@ -1,0 +1,42 @@
+{{- /* "Latest on YouTube" carousel, sourced live from the channel's public RSS feed. */ -}}
+{{- with (site.Params.youtube).channelId }}
+{{- $count := (site.Params.youtube).count | default 5 }}
+{{- $feedURL := printf "https://www.youtube.com/feeds/videos.xml?channel_id=%s" . }}
+{{- $result := try (resources.GetRemote $feedURL) }}
+{{- with $result.Err }}
+{{- warnf "youtube feed fetch failed: %s" . }}
+{{- else with $result.Value }}
+{{- $feed := . | transform.Unmarshal }}
+{{- $entries := $feed.entry }}
+{{- if not (reflect.IsSlice $entries) }}{{ $entries = slice $entries }}{{ end }}
+{{- with first $count $entries }}
+{{- $ytURL := "" }}
+{{- range site.Params.socialIcons }}
+{{- if eq (lower .name) "youtube" }}{{ $ytURL = .url }}{{ end }}
+{{- end }}
+<section class="youtube-section">
+    <div class="youtube-section-inner">
+        <div class="youtube-section-header">
+            <h2>Latest on YouTube</h2>
+            {{- with $ytURL }}
+            <a class="youtube-section-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">All videos &rarr;</a>
+            {{- end }}
+        </div>
+        <div class="youtube-carousel">
+            {{- range . }}
+            <a class="youtube-card" href="{{ printf "https://www.youtube.com/watch?v=%s" .videoId }}" target="_blank" rel="noopener noreferrer">
+                <span class="youtube-card-thumb">
+                    <img src="{{ printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .videoId }}" alt="" loading="lazy" width="480" height="360">
+                    <span class="youtube-play" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                </span>
+                <span class="youtube-card-title">{{ .title }}</span>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>
+{{- end }}
+{{- end }}
+{{- end }}
