@@ -18,6 +18,29 @@
 
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+
+{{- with (where $pages "Params.featured" true) }}
+{{- with index . 0 }}
+<a class="featured-post" href="{{ .Permalink }}" aria-label="Featured post: {{ .Title | plainify }}">
+    {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
+    {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+    <div class="featured-post-body">
+        <span class="featured-post-label">Featured</span>
+        <h2 class="entry-hint-parent">{{ .Title }}</h2>
+        {{- if (ne (.Param "hideSummary") true) }}
+        <p class="featured-post-summary">{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+        {{- end }}
+        {{- if not (.Param "hideMeta") }}
+        <footer class="entry-footer">
+            {{- partial "post_meta.html" . -}}
+        </footer>
+        {{- end }}
+    </div>
+</a>
+{{- end }}
+{{- end }}
+
+{{- $pages = where $pages "Params.featured" "!=" true }}
 {{- $paginator := .Paginate $pages 6 }}
 
 <div class="posts-grid">

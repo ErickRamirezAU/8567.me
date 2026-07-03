@@ -1,6 +1,7 @@
 ---
 date: '2026-06-11'
 draft: false
+featured: true
 title: 'Talk to your DB with no code, just Claude'
 summary: Connect Claude to your DB via MCP and watch it create collections, insert records, and run bulk updates through plain English, zero code required.
 cover:

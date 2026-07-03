@@ -152,6 +152,100 @@ h6,
     transform: translateY(-2px);
 }
 
+.featured-post {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+    align-items: stretch;
+    gap: var(--gap);
+    margin-bottom: calc(var(--gap) * 2);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 2);
+    background: var(--entry);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.featured-post:hover {
+    border-color: var(--accent);
+    box-shadow: 0 12px 32px -18px var(--accent);
+    transform: translateY(-2px);
+}
+
+.featured-post .entry-cover {
+    margin: 0;
+    height: 100%;
+}
+
+.featured-post .entry-cover img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.featured-post-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: calc(var(--gap) * 1.25) calc(var(--gap) * 1.5) calc(var(--gap) * 1.25) 0;
+}
+
+.featured-post-label {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.featured-post-body h2 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.featured-post-summary {
+    color: var(--secondary);
+    margin: 0;
+}
+
+/* Widen to match the header's content width, same treatment as .hero and .posts-grid. */
+@media screen and (min-width: calc(1024px + 48px)) {
+    .featured-post {
+        max-width: var(--nav-width);
+        margin-left: calc((var(--main-width) - var(--nav-width)) / 2);
+        margin-right: calc((var(--main-width) - var(--nav-width)) / 2);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-post .entry-cover img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .featured-post-body {
+        padding: 0 calc(var(--gap) * 1.25) calc(var(--gap) * 1.25);
+    }
+
+    .featured-post-body h2 {
+        font-size: 1.4rem;
+    }
+}
+
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
