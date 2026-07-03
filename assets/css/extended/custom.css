@@ -152,6 +152,10 @@ h6,
     transform: translateY(-2px);
 }
 
+.hero .social-icons a:first-of-type {
+    padding-inline-start: 10px;
+}
+
 .about-photo {
     display: block;
     width: 160px;
