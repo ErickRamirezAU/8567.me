@@ -152,6 +152,35 @@ h6,
     transform: translateY(-2px);
 }
 
+.about-photo {
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--entry);
+    box-shadow: 0 0 0 1px var(--border);
+}
+
+.about-inner {
+    max-width: 560px;
+}
+
+.about-inner .entry-content {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    text-align: left;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.about-inner .entry-content p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
 .featured-post {
     position: relative;
     display: grid;

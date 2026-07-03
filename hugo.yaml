@@ -62,6 +62,10 @@ menu:
       name: Home
       url: /
       weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 12
     - identifier: tags
       name: Tags
       url: /tags/

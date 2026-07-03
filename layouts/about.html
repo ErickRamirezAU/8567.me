@@ -1,0 +1,19 @@
+{{- define "main" }}
+
+<section class="hero about-hero">
+    <span class="hero-blob hero-blob--one" aria-hidden="true"></span>
+    <span class="hero-blob hero-blob--two" aria-hidden="true"></span>
+    <div class="hero-inner about-inner">
+        {{- with .Params.photo }}
+        <img class="about-photo" src="{{ . | absURL }}" alt="{{ $.Title }}" width="160" height="160">
+        {{- end }}
+        <h1>{{ .Title }}</h1>
+        <span class="hero-accent-bar" aria-hidden="true"></span>
+        <div class="entry-content md-content">
+            {{ .Content }}
+        </div>
+        {{ partial "social_icons.html" (dict "align" "center") }}
+    </div>
+</section>
+
+{{- end }}
