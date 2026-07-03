@@ -37,18 +37,27 @@ params:
       I share what's useful, straight from real world experience. No fluff, no hype.
 
   socialIcons:
-    - name: GitHub
-      title: Mostly open-source
-      url: "https://github.com/ErickRamirezAU"
+    - name: YouTube
+      title: I publish videos here
+      url: https://www.youtube.com/@ErickRamirezAU
     - name: X
       title: I share my thoughts here
       url: "https://x.com/ErickRamirezAU"
     - name: LinkedIn
-      title: Connect with me
+      title: I connect with professionals here
       url: "https://www.linkedin.com/in/ErickRamirez/"
+    - name: GitHub
+      title: I work on open-source projects
+      url: "https://github.com/ErickRamirezAU"
     - name: Medium
       title: I publish here too
       url: "https://medium.com/@ErickRamirezAU"
+    - name: Facebook
+      title: I share thoughts here too
+      url: https://www.facebook.com/ErickRamirez.AI.dev
+    - name: Instagram
+      title: I share videos and photos here
+      url: https://www.instagram.com/ErickRamirez.AI.dev
 
 outputs:
   home:
