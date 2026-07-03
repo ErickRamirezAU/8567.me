@@ -1,0 +1,36 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy via rsync
+        uses: Burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete --exclude=cgi-bin --exclude=.well-known
+          path: public/
+          remote_path: public_html/
+          remote_host: 8567.me
+          remote_port: 22
+          remote_user: rg2w8wm0lszh
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
