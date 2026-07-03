@@ -1,0 +1,75 @@
+.hero {
+    text-align: center;
+    padding: calc(var(--gap) * 2) 0;
+    margin-bottom: calc(var(--gap) * 2);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.75rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.hero .entry-content {
+    color: var(--secondary);
+    font-size: 1.05rem;
+}
+
+.hero .social-icons {
+    justify-content: center;
+    margin-top: var(--gap);
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+}
+
+/* Widen the grid to match the header's content width (--nav-width) instead
+   of the narrower reading column (--main-width), once there's room for it
+   to do so without overflowing the viewport. */
+@media screen and (min-width: calc(1024px + 48px)) {
+    .posts-grid {
+        max-width: var(--nav-width);
+        margin-left: calc((var(--main-width) - var(--nav-width)) / 2);
+        margin-right: calc((var(--main-width) - var(--nav-width)) / 2);
+    }
+}
+
+.posts-grid .post-entry {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.posts-grid .entry-cover img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.posts-grid .entry-content {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
