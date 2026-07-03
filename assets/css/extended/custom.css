@@ -153,6 +153,7 @@ h6,
 }
 
 .featured-post {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
     align-items: stretch;
@@ -319,4 +320,37 @@ h6,
 .footer a:hover,
 .top-link:hover {
     color: var(--accent-strong);
+}
+
+.card-tags {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.card-tags li {
+    display: inline-block;
+}
+
+.card-tags a {
+    display: block;
+    padding: 2px 10px;
+    border-radius: var(--radius);
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    color: var(--secondary);
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.card-tags a:hover {
+    background: var(--border);
+    color: var(--accent-strong);
+}
+
+.featured-post-body .card-tags {
+    margin-top: var(--gap);
 }

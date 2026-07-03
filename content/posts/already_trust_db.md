@@ -3,6 +3,7 @@ date: '2026-05-22'
 draft: false
 title: 'You already trust this DB, let it run your AI stack too'
 summary: Bolting a separate vector database onto your operational store creates two schemas, two consistency models, and two failure domains. See why Cassandra keeps it all in one system.
+tags: ['Databases', 'Cassandra', 'Vector Search', 'AI']
 cover:
     image: posts/images/already_trust_db.png
     alt: "Cover image"

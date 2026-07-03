@@ -4,6 +4,7 @@ draft: false
 featured: true
 title: 'Talk to your DB with no code, just Claude'
 summary: Connect Claude to your DB via MCP and watch it create collections, insert records, and run bulk updates through plain English, zero code required.
+tags: ['MCP', 'AI', 'Tutorial', 'Databases']
 cover:
     image: posts/images/claude_mcp.png
     alt: "Cover image"

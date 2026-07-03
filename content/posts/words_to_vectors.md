@@ -3,6 +3,7 @@ date: '2026-06-03'
 draft: false
 title: "From Words to Vectors: A Beginner's Guide to Vector Search and AI Databases"
 summary: New to embeddings, LLMs, and vector databases? Start from first principles and end up understanding how modern AI systems search for meaning, not just keywords — with a working Python example.
+tags: ['AI', 'Vector Search', 'Tutorial']
 cover:
     image: posts/images/words_to_vectors.png
     alt: "Cover image"

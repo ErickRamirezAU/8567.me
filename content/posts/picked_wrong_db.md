@@ -3,6 +3,7 @@ date: '2026-05-21'
 draft: false
 title: 'You picked the wrong database'
 summary: Not all AI databases are created equal. See how Cassandra runs vector + metadata search in a single query, at scale.
+tags: ['Databases', 'Cassandra', 'Vector Search', 'AI']
 cover:
     image: posts/images/picked_wrong_db.png
     alt: "Cover image"

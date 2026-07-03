@@ -21,7 +21,7 @@
 
 {{- with (where $pages "Params.featured" true) }}
 {{- with index . 0 }}
-<a class="featured-post" href="{{ .Permalink }}" aria-label="Featured post: {{ .Title | plainify }}">
+<div class="featured-post">
     {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
     {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
     <div class="featured-post-body">
@@ -35,8 +35,16 @@
             {{- partial "post_meta.html" . -}}
         </footer>
         {{- end }}
+        {{- with .GetTerms "tags" }}
+        <ul class="card-tags">
+            {{- range . }}
+            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+            {{- end }}
+        </ul>
+        {{- end }}
     </div>
-</a>
+    <a class="entry-link" aria-label="Featured post: {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+</div>
 {{- end }}
 {{- end }}
 
@@ -70,6 +78,13 @@
         <footer class="entry-footer">
             {{- partial "post_meta.html" . -}}
         </footer>
+        {{- end }}
+        {{- with .GetTerms "tags" }}
+        <ul class="card-tags">
+            {{- range . }}
+            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+            {{- end }}
+        </ul>
         {{- end }}
         <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
     </article>

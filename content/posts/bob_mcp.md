@@ -3,6 +3,7 @@ date: '2026-06-12'
 draft: false
 title: 'Talk to your database with Bob, the AI builder'
 summary: Connect Bob IDE to Astra DB via MCP and create collections, insert records, and run bulk updates through plain English, zero code required.
+tags: ['MCP', 'AI', 'Tutorial', 'Databases']
 cover:
     image: posts/images/bob_mcp.png
     alt: "Cover image"
