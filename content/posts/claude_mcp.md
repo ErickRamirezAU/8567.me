@@ -1,8 +1,8 @@
 ---
-date: '2026-06-25T22:54:03+10:00'
+date: '2026-06-11'
 draft: false
 title: 'Talk to your DB with no code, just Claude'
-summary: Not all AI databases are created equal. See how Cassandra runs vector + metadata search in a single query, at scale.
+summary: Connect Claude to your DB via MCP and watch it create collections, insert records, and run bulk updates through plain English, zero code required.
 cover:
     image: posts/images/claude_mcp.png
     alt: "Cover image"
