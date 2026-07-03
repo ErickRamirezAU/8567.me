@@ -2,8 +2,11 @@
 
 {{- with site.Params.homeInfoParams }}
 <section class="hero">
+    <span class="hero-blob hero-blob--one" aria-hidden="true"></span>
+    <span class="hero-blob hero-blob--two" aria-hidden="true"></span>
     <div class="hero-inner home-info">
         <h1>{{ .Title | markdownify }}</h1>
+        <span class="hero-accent-bar" aria-hidden="true"></span>
         <div class="entry-content">
             {{ $opts := dict "display" "block" }}
             {{ .Content | $.Page.RenderString $opts }}
