@@ -13,8 +13,8 @@
     --surface-accent-to: var(--accent-strong);
     --surface-accent-text: var(--primary);
 
-    --hero-glow-1: color-mix(in srgb, var(--accent) 24%, transparent);
-    --hero-glow-2: color-mix(in srgb, var(--accent-strong) 20%, transparent);
+    --hero-glow-1: color-mix(in srgb, var(--accent) 50%, transparent);
+    --hero-glow-2: color-mix(in srgb, var(--accent-strong) 40%, transparent);
     --hero-blob-opacity: 0.26;
 
     /* Warm-tinted neutrals (Tailwind "stone" scale) so the grayscale UI
@@ -42,8 +42,8 @@
     --surface-accent-to: var(--accent-strong);
     --surface-accent-text: var(--accent-contrast);
 
-    --hero-glow-1: color-mix(in srgb, var(--accent) 14%, transparent);
-    --hero-glow-2: color-mix(in srgb, var(--accent-strong) 10%, transparent);
+    --hero-glow-1: color-mix(in srgb, var(--accent) 30%, transparent);
+    --hero-glow-2: color-mix(in srgb, var(--accent-strong) 20%, transparent);
     --hero-blob-opacity: 0.16;
 
     --theme: #1c1917;
