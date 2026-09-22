@@ -210,7 +210,7 @@ h6,
     position: relative;
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
-    align-items: stretch;
+    align-items: center;
     gap: var(--gap);
     margin-bottom: calc(var(--gap) * 2);
     border: 1px solid var(--border);
@@ -230,14 +230,13 @@ h6,
 
 .featured-post .entry-cover {
     margin: 0;
-    height: 100%;
 }
 
 .featured-post .entry-cover img {
     width: 100%;
-    height: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
+    object-position: left center;
 }
 
 .featured-post-body {
@@ -267,11 +266,19 @@ h6,
     font-size: 1.75rem;
     line-height: 1.25;
     margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .featured-post-summary {
     color: var(--secondary);
     margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
 /* Widen to match the header's content width, same treatment as .hero and .posts-grid. */
