@@ -12,18 +12,22 @@ Personal site for Erick Ramirez ("AI Decoded"), built with Hugo (extended) and t
 
 ## Local dev
 
-Run the dev server with `hugo server -D` (a `.claude/launch.json` config named `hugo-server` on port 1313 already does this). Stop it as soon as you're done verifying a change — don't leave it running.
+Run the dev server with `hugo server -D` (a `.claude/launch.json` config named
+`hugo-server` already does this). Stop it as soon as you're done verifying a
+change — don't leave it running.
 
 ## Deployment
 
-Push to `main` triggers `.github/workflows/deploy.yml`: builds with `hugo --minify`, then uploads `public/` to `public_html/` on GoDaddy cPanel via **SFTP** (not rsync — shell access is disabled on the cPanel account, so rsync-based actions fail). Don't reach for rsync-based GitHub Actions here.
+Push to `main` triggers `.github/workflows/deploy.yml`: builds with
+`hugo --minify`, then uploads `public/` to `public_html/` via **SFTP**
+(rsync-based actions won't work on this host). Don't reach for rsync-based
+GitHub Actions here.
 
 ## Conventions
 
 - Don't edit `themes/PaperMod/` directly — it's a submodule; overrides belong in `layouts/` or `assets/css/extended/custom.css`.
 - `public/` and `resources/` are generated/gitignored — never hand-edit them.
 - New posts: use the `scrape-to-hugo-post` skill (`.claude/skills/scrape-to-hugo-post/`) to convert a source URL into a Hugo/PaperMod markdown post.
-- This repo lives on a Google Drive-synced path — expect slower git status/operations than a local disk, and let large syncs settle before heavy git use.
 
 ## Hugo/PaperMod gotchas
 
