@@ -243,18 +243,18 @@ ten the index finds. Here is what queries 1, 5 and 6 return on my load.
 Query 1, films released in 1999:
 
 ```text
-               title                | release_year
+ title                              | release_year
 ------------------------------------+--------------
  South Park: Bigger, Longer & Uncut |         1999
- American Beauty                    |         1999
- Cruel Intentions                   |         1999
- The Ninth Gate                     |         1999
- All About My Mother                |         1999
- The Insider                        |         1999
- Anna and the King                  |         1999
- Dogma                              |         1999
- Girl, Interrupted                  |         1999
- Fight Club                         |         1999
+                    American Beauty |         1999
+                   Cruel Intentions |         1999
+                     The Ninth Gate |         1999
+                All About My Mother |         1999
+                        The Insider |         1999
+                  Anna and the King |         1999
+                              Dogma |         1999
+                  Girl, Interrupted |         1999
+                         Fight Club |         1999
 
 (10 rows)
 ```
@@ -262,18 +262,18 @@ Query 1, films released in 1999:
 Query 5, science fiction films from the 2010s rated above 7:
 
 ```text
-             title              | release_year | cmovie_rating
+ title                          | release_year | cmovie_rating
 --------------------------------+--------------+---------------
- Justice League                 |         2017 |           8.8
- The Martian                    |         2015 |           8.6
- Solo: A Star Wars Story        |         2018 |           9.7
- The Avengers                   |         2012 |           7.2
- Thor: The Dark World           |         2013 |           7.8
- Jupiter Ascending              |         2015 |           8.3
+                 Justice League |         2017 |           8.8
+                    The Martian |         2015 |           8.6
+        Solo: A Star Wars Story |         2018 |           9.7
+                   The Avengers |         2012 |           7.2
+           Thor: The Dark World |         2013 |           7.8
+              Jupiter Ascending |         2015 |           8.3
  Dawn of the Planet of the Apes |         2014 |           7.4
- John Carter                    |         2012 |           8.4
- Captain Marvel                 |         2019 |           7.3
- Home                           |         2015 |           8.3
+                    John Carter |         2012 |           8.4
+                 Captain Marvel |         2019 |           7.3
+                           Home |         2015 |           8.3
 
 (10 rows)
 ```
@@ -281,17 +281,17 @@ Query 5, science fiction films from the 2010s rated above 7:
 Query 6, short dramas under 100 minutes:
 
 ```text
-        title         | runtime
+ title                | runtime
 ----------------------+---------
- La Haine             |      96
- Hancock              |      92
- Maleficent           |      97
- Cruel Intentions     |      97
- The Father           |      97
- Gordy                |      90
- The Truman Show      |      99
- Rambo                |      90
- Clerks               |      92
+             La Haine |      96
+              Hancock |      92
+           Maleficent |      97
+     Cruel Intentions |      97
+           The Father |      97
+                Gordy |      90
+      The Truman Show |      99
+                Rambo |      90
+               Clerks |      92
  In the Mood for Love |      98
 
 (10 rows)

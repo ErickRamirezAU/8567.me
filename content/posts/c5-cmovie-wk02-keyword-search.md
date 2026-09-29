@@ -112,6 +112,7 @@ SELECT title FROM movies WHERE title = 'wick';
  title
 -------
 
+
 (0 rows)
 ```
 
@@ -241,10 +242,10 @@ SELECT title FROM movies WHERE title_words CONTAINS 'wick' LIMIT 10;
 
  title
 -----------------------------------
- John Wick: Chapter 4
+              John Wick: Chapter 4
  John Wick: Chapter 3 – Parabellum
- John Wick: Chapter 2
- John Wick
+              John Wick: Chapter 2
+                         John Wick
 
 (4 rows)
 ```
@@ -257,16 +258,16 @@ SELECT title, actors FROM movies WHERE actor_words CONTAINS 'murphy' LIMIT 10;
 
  title                 | actors
 -----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- Dunkirk               | ['Fionn Whitehead', 'Tom Glynn-Carney', 'Jack Lowden', 'Harry Styles', 'Aneurin Barnard', 'James D''Arcy', 'Barry Keoghan', 'Kenneth Branagh', 'Cillian Murphy', 'Mark Rylance', 'Tom Hardy']
- Batman Returns        | ['Michael Keaton', 'Danny DeVito', 'Michelle Pfeiffer', 'Christopher Walken', 'Michael Gough', 'Pat Hingle', 'Michael Murphy']
- Batman Begins         | ['Christian Bale', 'Michael Caine', 'Liam Neeson', 'Katie Holmes', 'Gary Oldman', 'Cillian Murphy', 'Tom Wilkinson', 'Rutger Hauer', 'Ken Watanabe', 'Morgan Freeman']
- Girl, Interrupted     | ['Winona Ryder', 'Angelina Jolie', 'Clea DuVall', 'Brittany Murphy', 'Elisabeth Moss', 'Jared Leto', 'Jeffrey Tambor', 'Vanessa Redgrave', 'Whoopi Goldberg']
- A Quiet Place Part II | ['Emily Blunt', 'Cillian Murphy', 'Millicent Simmonds', 'Noah Jupe', 'Djimon Hounsou', 'John Krasinski']
- 28 Days Later         | ['Cillian Murphy', 'Naomie Harris', 'Christopher Eccleston', 'Megan Burns', 'Brendan Gleeson']
- 8 Mile                | ['Eminem', 'Kim Basinger', 'Brittany Murphy', 'Mekhi Phifer']
- Inception             | ['Leonardo DiCaprio', 'Ken Watanabe', 'Joseph Gordon-Levitt', 'Marion Cotillard', 'Elliot Page', 'Tom Hardy', 'Cillian Murphy', 'Tom Berenger', 'Michael Caine']
- Spider-Man 2          | ['Tobey Maguire', 'Kirsten Dunst', 'James Franco', 'Alfred Molina', 'Rosemary Harris', 'Donna Murphy']
- Sin City              | ['Jessica Alba', 'Benicio del Toro', 'Brittany Murphy', 'Clive Owen', 'Mickey Rourke', 'Bruce Willis', 'Elijah Wood']
+               Dunkirk | ['Fionn Whitehead', 'Tom Glynn-Carney', 'Jack Lowden', 'Harry Styles', 'Aneurin Barnard', 'James D''Arcy', 'Barry Keoghan', 'Kenneth Branagh', 'Cillian Murphy', 'Mark Rylance', 'Tom Hardy']
+        Batman Returns |                                                                ['Michael Keaton', 'Danny DeVito', 'Michelle Pfeiffer', 'Christopher Walken', 'Michael Gough', 'Pat Hingle', 'Michael Murphy']
+         Batman Begins |                        ['Christian Bale', 'Michael Caine', 'Liam Neeson', 'Katie Holmes', 'Gary Oldman', 'Cillian Murphy', 'Tom Wilkinson', 'Rutger Hauer', 'Ken Watanabe', 'Morgan Freeman']
+     Girl, Interrupted |                                 ['Winona Ryder', 'Angelina Jolie', 'Clea DuVall', 'Brittany Murphy', 'Elisabeth Moss', 'Jared Leto', 'Jeffrey Tambor', 'Vanessa Redgrave', 'Whoopi Goldberg']
+ A Quiet Place Part II |                                                                                      ['Emily Blunt', 'Cillian Murphy', 'Millicent Simmonds', 'Noah Jupe', 'Djimon Hounsou', 'John Krasinski']
+         28 Days Later |                                                                                                ['Cillian Murphy', 'Naomie Harris', 'Christopher Eccleston', 'Megan Burns', 'Brendan Gleeson']
+                8 Mile |                                                                                                                                 ['Eminem', 'Kim Basinger', 'Brittany Murphy', 'Mekhi Phifer']
+             Inception |                              ['Leonardo DiCaprio', 'Ken Watanabe', 'Joseph Gordon-Levitt', 'Marion Cotillard', 'Elliot Page', 'Tom Hardy', 'Cillian Murphy', 'Tom Berenger', 'Michael Caine']
+          Spider-Man 2 |                                                                                        ['Tobey Maguire', 'Kirsten Dunst', 'James Franco', 'Alfred Molina', 'Rosemary Harris', 'Donna Murphy']
+              Sin City |                                                                         ['Jessica Alba', 'Benicio del Toro', 'Brittany Murphy', 'Clive Owen', 'Mickey Rourke', 'Bruce Willis', 'Elijah Wood']
 
 (10 rows)
 ```
@@ -283,9 +284,9 @@ WHERE title_words CONTAINS 'wick' AND title_words CONTAINS 'chapter' LIMIT 10;
 
  title
 -----------------------------------
- John Wick: Chapter 4
+              John Wick: Chapter 4
  John Wick: Chapter 3 – Parabellum
- John Wick: Chapter 2
+              John Wick: Chapter 2
 
 (3 rows)
 ```
@@ -308,8 +309,8 @@ WHERE actor_words CONTAINS 'murphy' AND release_year > 2015 LIMIT 10;
 
  title                 | release_year | actors
 -----------------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- Dunkirk               |         2017 | ['Fionn Whitehead', 'Tom Glynn-Carney', 'Jack Lowden', 'Harry Styles', 'Aneurin Barnard', 'James D''Arcy', 'Barry Keoghan', 'Kenneth Branagh', 'Cillian Murphy', 'Mark Rylance', 'Tom Hardy']
- A Quiet Place Part II |         2020 | ['Emily Blunt', 'Cillian Murphy', 'Millicent Simmonds', 'Noah Jupe', 'Djimon Hounsou', 'John Krasinski']
+               Dunkirk |         2017 | ['Fionn Whitehead', 'Tom Glynn-Carney', 'Jack Lowden', 'Harry Styles', 'Aneurin Barnard', 'James D''Arcy', 'Barry Keoghan', 'Kenneth Branagh', 'Cillian Murphy', 'Mark Rylance', 'Tom Hardy']
+ A Quiet Place Part II |         2020 |                                                                                      ['Emily Blunt', 'Cillian Murphy', 'Millicent Simmonds', 'Noah Jupe', 'Djimon Hounsou', 'John Krasinski']
 
 (2 rows)
 ```
@@ -329,6 +330,7 @@ WHERE genres CONTAINS 'drama' AND title_words CONTAINS 'wick'
 
  title
 -------
+
 
 (0 rows)
 ```
@@ -496,7 +498,7 @@ curl -s -G http://127.0.0.1:8000/movies/search \
             "cmovie_rating": 6.4
         },
         {
-            "title": "John Wick: Chapter 3 – Parabellum",
+            "title": "John Wick: Chapter 3 \u2013 Parabellum",
             "release_year": 2019,
             "cmovie_rating": 3.9
         },
@@ -514,7 +516,7 @@ curl -s -G http://127.0.0.1:8000/movies/search \
 }
 ```
 
-The `–` is the en dash in "Chapter 3 – Parabellum", which `json.tool`
+The `\u2013` is the en dash in "Chapter 3 – Parabellum", which `json.tool`
 escapes by default.
 
 Let's search the cast for "Tom Glynn-Carney". The endpoint strips the hyphen
