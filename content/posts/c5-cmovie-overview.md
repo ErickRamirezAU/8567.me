@@ -86,7 +86,7 @@ By the end you'll have SAI indexes on the `movies` table and queries that
 combine genre, year and rating in one statement, without `ALLOW FILTERING`.
 
 <!-- markdownlint-disable-next-line MD013 -->
-### Week 2 - Not every search needs Elasticsearch: build a Python FastAPI filter and keyword search on Cassandra
+### [Week 2 - Not every search needs Elasticsearch: build a Python FastAPI filter and keyword search on Cassandra](/posts/c5-cmovie-wk02-keyword-search/)
 
 Build week, Python.
 
