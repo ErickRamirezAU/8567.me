@@ -1,0 +1,12 @@
+{{- if eq .Type "alert" -}}
+{{- $type := lower .AlertType -}}
+{{- $label := or .AlertTitle (title $type) -}}
+<blockquote class="callout callout-{{ $type }}">
+  <p class="callout-title">{{ $label }}</p>
+  {{ .Text }}
+</blockquote>
+{{- else -}}
+<blockquote>
+  {{ .Text }}
+</blockquote>
+{{- end -}}

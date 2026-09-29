@@ -4,6 +4,12 @@
     --accent-soft: rgba(234, 88, 12, 0.10);
     --accent-contrast: #2a0a02;
 
+    /* Warning callouts (WARNING, CAUTION, DANGER/ERROR). Red rather than
+       amber so they stay distinct from the orange accent. */
+    --warn: #dc2626;
+    --warn-strong: #b91c1c;
+    --warn-soft: rgba(220, 38, 38, 0.10);
+
     /* Large-surface accent blocks (.hero, .youtube-section) reuse the exact
        --accent/--accent-strong tone from the grid/featured-post hover effect
        so the whole homepage reads as one consistent accent color, just at
@@ -37,6 +43,10 @@
     --accent-strong: #fdba74;
     --accent-soft: rgba(251, 146, 60, 0.14);
     --accent-contrast: #2a0a02;
+
+    --warn: #f87171;
+    --warn-strong: #fca5a5;
+    --warn-soft: rgba(248, 113, 113, 0.14);
 
     --surface-accent-from: var(--accent);
     --surface-accent-to: var(--accent-strong);
@@ -373,6 +383,43 @@ h6,
 
 .md-content blockquote {
     border-inline-start-color: var(--accent);
+}
+
+/* Callouts: Obsidian/GitHub style `> [!TYPE]` alerts, rendered by
+   layouts/_markup/render-blockquote.html. Flat: no radius, no shadow.
+   Every type shares the accent style except the warning types below. */
+.md-content blockquote.callout {
+    --callout-bar: var(--accent);
+    --callout-title: var(--accent-strong);
+    --callout-bg: var(--accent-soft);
+    border-inline-start: 4px solid var(--callout-bar);
+    border-radius: 0;
+    background: var(--callout-bg);
+    padding: 0.75rem 1rem;
+    color: var(--content);
+}
+
+.md-content blockquote.callout-warning,
+.md-content blockquote.callout-caution,
+.md-content blockquote.callout-danger,
+.md-content blockquote.callout-error {
+    --callout-bar: var(--warn);
+    --callout-title: var(--warn-strong);
+    --callout-bg: var(--warn-soft);
+}
+
+.md-content blockquote.callout > :last-child {
+    margin-bottom: 0;
+}
+
+.md-content .callout-title {
+    margin-bottom: 0.5rem;
+    color: var(--callout-title);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .pagination a {
