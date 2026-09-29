@@ -138,8 +138,8 @@ open. Wikidata film facts are
 [CC0](https://creativecommons.org/publicdomain/zero/1.0/), and I credit them
 anyway. Plot text is
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/): the plots
-aren't queried this week, but they're in your table, so the repo carries a
-link to each article and the licence notice.
+aren't queried this week, but they're in your table. The loader fetches each
+plot from the film's own Wikipedia article.
 
 Follow the
 [setup page](https://github.com/ErickRamirezAU/cassandra-5-movie-search/blob/main/docs/setup.md)
@@ -405,11 +405,9 @@ on the [8567.me](https://8567.me) homepage.
 ---
 
 Film facts from [Wikidata](https://www.wikidata.org),
-[CC0](https://creativecommons.org/publicdomain/zero/1.0/). Plot text from
-English Wikipedia,
-[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), with links to
-each article in the
-[series repo](https://github.com/ErickRamirezAU/cassandra-5-movie-search).
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/). Plot text is
+fetched by the loader from each film's English Wikipedia article,
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 *Apache Cassandra, Cassandra, Apache, the Apache logo, and the Apache Cassandra
 project logo are either registered trademarks or trademarks of The Apache
