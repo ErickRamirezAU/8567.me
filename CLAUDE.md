@@ -76,8 +76,8 @@ Workflow established for the cMovie series, reused for each new post:
 2. Draft 2-3 hook/headline text options (eyebrow + headline) for that
    overlay alongside the image prompt.
 3. Import the generated image into the
-   `CREATIVES-2026-site_thumbnails` Google Slides deck
-   (`My Drive/8567.me/CREATIVES-2026-site_thumbnails.gslides`) and
+   `CREATIVES-2026-site_thumbnails-1366x768` Google Slides deck
+   (`My Drive/8567.me/CREATIVES-2026-site_thumbnails-1366x768.gslides`) and
    composite the text overlay there — image-gen models don't render
    legible text reliably, so text is added in Slides instead.
 4. Export the finished slide, convert to WebP with `cwebp -q 90`
