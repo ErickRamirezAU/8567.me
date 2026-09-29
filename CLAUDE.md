@@ -1,13 +1,20 @@
 # 8567.me
 
-Personal site for Erick Ramirez ("AI Decoded"), built with Hugo (extended) and the PaperMod theme. Articles on AI, databases, and software development.
+Personal site for Erick Ramirez ("AI Decoded"), built with Hugo (extended) and
+the PaperMod theme. Articles on AI, databases, and software development.
 
 ## Stack
 
-- Hugo static site, theme **PaperMod** vendored as a git submodule at `themes/PaperMod` — never edit the theme directly.
-- Theme overrides live in `layouts/` (`layouts/index.html`, `layouts/about.html`, `layouts/_partials/`).
-- Custom styling and design tokens live in `assets/css/extended/custom.css` — accent colors (`--accent`, `--accent-strong`, etc.), surface tokens, and font vars, with light/dark variants under `:root[data-theme="dark"]`.
-- Content lives in `content/posts/*.md`; post images go in `content/posts/images/` using `<slug>.ext` for the cover image and `<slug>-a01.ext`, `-a02.ext`, ... for inline images in order.
+- Hugo static site, theme **PaperMod** vendored as a git submodule at
+  `themes/PaperMod` — never edit the theme directly.
+- Theme overrides live in `layouts/` (`layouts/index.html`,
+  `layouts/about.html`, `layouts/_partials/`).
+- Custom styling and design tokens live in `assets/css/extended/custom.css` —
+  accent colors (`--accent`, `--accent-strong`, etc.), surface tokens, and font
+  vars, with light/dark variants under `:root[data-theme="dark"]`.
+- Content lives in `content/posts/*.md`; post images go in
+  `content/posts/images/` using `<slug>.ext` for the cover image and
+  `<slug>-a01.ext`, `-a02.ext`, ... for inline images in order.
 - Site config: `hugo.yaml`.
 
 ## Local dev
@@ -25,9 +32,38 @@ GitHub Actions here.
 
 ## Conventions
 
-- Don't edit `themes/PaperMod/` directly — it's a submodule; overrides belong in `layouts/` or `assets/css/extended/custom.css`.
+- Don't edit `themes/PaperMod/` directly — it's a submodule; overrides belong in
+  `layouts/` or `assets/css/extended/custom.css`.
 - `public/` and `resources/` are generated/gitignored — never hand-edit them.
-- New posts: use the `scrape-to-hugo-post` skill (`.claude/skills/scrape-to-hugo-post/`) to convert a source URL into a Hugo/PaperMod markdown post.
+- New posts: use the `scrape-to-hugo-post` skill
+  (`.claude/skills/scrape-to-hugo-post/`) to convert a source URL into a
+  Hugo/PaperMod markdown post.
+
+## Callouts
+
+Posts can use Obsidian/GitHub style alerts, so a draft written in the Obsidian
+vault renders as a callout on the site without changes:
+
+```markdown
+> [!INFO]
+>
+> Body text, with **Markdown** as usual.
+
+> [!NOTE] Custom title
+> The text after the marker replaces the default title.
+```
+
+- The title defaults to the type name (`[!TIP]` shows as "TIP"), set in the
+  site's uppercase eyebrow style.
+- `warning`, `caution`, `danger` and `error` render in red. Every other type
+  (`note`, `info`, `tip` and so on) uses the orange accent.
+- Foldable callouts (`[!INFO]-`) aren't supported: the `-` is ignored and the
+  body always shows.
+- A plain `>` quote with no marker still renders as a normal blockquote.
+- Implementation: `layouts/_markup/render-blockquote.html` plus the `.callout`
+  rules in `assets/css/extended/custom.css`. To add a variant, set
+  `--callout-bar`, `--callout-title` and `--callout-bg` on a `.callout-<type>`
+  selector rather than hard-coding colours.
 
 ## Cover images
 
@@ -48,9 +84,9 @@ Workflow established for the cMovie series, reused for each new post:
    (macOS `sips` can read PNG but can't write WebP), and place it at
    `content/posts/images/<slug>.webp`, wired into the post's `cover:`
    frontmatter.
-5. Once the post is live, cross-link it with the series overview post:
-   make that week's heading in the overview a link to the new post, and
-   add a link back to the overview near the top of the new post. See
+5. Once the post is live, cross-link it with the series overview post: make that
+   week's heading in the overview a link to the new post, and add a link back to
+   the overview near the top of the new post. See
    [content/posts/c5-cmovie-overview.md](content/posts/c5-cmovie-overview.md)
    and
    [content/posts/c5-cmovie-wk01-sai-overview.md](content/posts/c5-cmovie-wk01-sai-overview.md)
@@ -81,7 +117,15 @@ Gotchas hit building this workflow:
 
 ## Hugo/PaperMod gotchas
 
-- `resources.GetRemote`: `.Err` field access was removed in Hugo v0.141+. Use `{{ $result := try (resources.GetRemote $url) }}` then `{{ with $result.Err }}...{{ else with $result.Value }}...{{ end }}`.
-- `transform.Unmarshal` on XML strips namespace prefixes (e.g. `<yt:videoId>` → key `videoId`) and prefixes XML attributes with `-` (e.g. `-url`) — access those with `index $m "-url"`.
-- A singular XML element (e.g. one `<entry>` in an RSS feed) unmarshals to a map, not a one-item slice — normalize with `reflect.IsSlice` before ranging if the count can vary.
-- Full-bleed sections: use `width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);` — don't fight the theme's `.main` padding with negative margins.
+- `resources.GetRemote`: `.Err` field access was removed in Hugo v0.141+. Use
+  `{{ $result := try (resources.GetRemote $url) }}` then
+  `{{ with $result.Err }}...{{ else with $result.Value }}...{{ end }}`.
+- `transform.Unmarshal` on XML strips namespace prefixes (e.g. `<yt:videoId>` →
+  key `videoId`) and prefixes XML attributes with `-` (e.g. `-url`) — access
+  those with `index $m "-url"`.
+- A singular XML element (e.g. one `<entry>` in an RSS feed) unmarshals to a
+  map, not a one-item slice — normalize with `reflect.IsSlice` before ranging if
+  the count can vary.
+- Full-bleed sections: use
+  `width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);`
+  — don't fight the theme's `.main` padding with negative margins.
