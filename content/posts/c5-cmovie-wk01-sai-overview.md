@@ -195,10 +195,16 @@ If you leave `USING` off entirely, Astra DB still gives you SAI, but 5.0 gives
 you a legacy secondary index by default. Spelling it out avoids the surprise
 if you later move to your own cluster.
 
-Astra DB builds each index in the background after you create it. Until the
-build finishes, a query that uses the index fails with
-`INDEX_BUILD_IN_PROGRESS`. On my 1,000 films that took about three minutes, so
-if you see that error, wait a moment and run the query again.
+> [!INFO]
+>
+> On creation of an index, Cassandra builds it in the background. Until the
+> build finishes, a query that uses the index fails with a `ReadFailure` error
+> (code 1300). On my 1,000 films that took about three minutes, so if you see
+> that error, wait a moment and run the query again.
+>
+> But once the index is live, index updates are **synchronous** with writes to
+> the base table, happening as part of the write itself, so new data can be
+> queried through the index **immediately**.
 
 ## Query cMovie
 
