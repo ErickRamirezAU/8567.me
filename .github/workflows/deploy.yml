@@ -29,7 +29,7 @@ jobs:
         with:
           host: 8567.me
           port: 22
-          username: rg2w8wm0lszh
+          username: ${{ secrets.SFTP_USERNAME }}
           privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
           localDir: public/
           remoteDir: public_html/
