@@ -103,7 +103,7 @@ actor's name.
 ## Act 2: Give it a sense of plot (weeks 3 to 6)
 
 <!-- markdownlint-disable-next-line MD013 -->
-### Week 3 - Skip the separate vector database: vector search in the same Cassandra table as your data
+### [Week 3 - Skip the separate vector database: vector search in the same Cassandra table as your data](/posts/c5-cmovie-wk03-vector-search/)
 
 Concept week, CQL.
 
