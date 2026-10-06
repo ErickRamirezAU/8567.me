@@ -38,6 +38,9 @@ GitHub Actions here.
 - New posts: use the `scrape-to-hugo-post` skill
   (`.claude/skills/scrape-to-hugo-post/`) to convert a source URL into a
   Hugo/PaperMod markdown post.
+- `README.md` is for visitors to the public repo, not agents. When a new series
+  or topic area launches, update its "What's on the site" section and the
+  matching topic badges and GitHub repo topics.
 
 ## Callouts
 
