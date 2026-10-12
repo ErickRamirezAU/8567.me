@@ -106,7 +106,10 @@ Gotchas hit building this workflow:
   "today" in local AEST time can land in the future in UTC terms and get
   silently excluded from the build — no error, it just won't appear.
   Match the date to the rest of the batch, or add `timeZone` to
-  `hugo.yaml` if this keeps happening.
+  `hugo.yaml` if this keeps happening. On a publish day before 11:00
+  AEDT, preview with `hugo server -D -F` and push after 11:00, or the
+  deploy skips the post. The vault rule "cMovie publish checklist" has
+  the full publish order for series posts.
 - `.featured-post .entry-cover img` (in `custom.css`): don't combine an
   explicit `height: 100%` with `aspect-ratio` when the container also has
   `align-items: stretch` — the explicit height wins over `aspect-ratio`
