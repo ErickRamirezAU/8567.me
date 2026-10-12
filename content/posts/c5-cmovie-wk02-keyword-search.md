@@ -614,7 +614,8 @@ index first.
 - A thin FastAPI layer turns query parameters into those predicates, with
   plain `def` handlers because the driver call underneath blocks.
 
-Next week, movie plots become vectors, the start of semantic search.
+[Next week](/posts/c5-cmovie-wk03-vector-search/), movie plots become vectors,
+the start of semantic search.
 
 If you want next week's post when it lands, follow me using the social
 buttons on the [8567.me](https://8567.me) homepage.

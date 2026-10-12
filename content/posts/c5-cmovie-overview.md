@@ -118,7 +118,7 @@ returns the plots nearest in meaning to one you describe. You'll need a free
 Google AI Studio key from this week onwards.
 
 <!-- markdownlint-disable-next-line MD013 -->
-### Week 4 - Vibe search, not keywords: build semantic search with Python and Cassandra
+### [Week 4 - Vibe search, not keywords: build semantic search with Python and Cassandra](/posts/c5-cmovie-wk04-semantic-search/)
 
 Build week, Python.
 

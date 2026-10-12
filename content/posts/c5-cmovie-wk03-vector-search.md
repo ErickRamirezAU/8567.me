@@ -481,8 +481,9 @@ plausible. That's why the helper uses the same model as the loader.
   production use yet. [Week 9](/posts/c5-cmovie-overview/) compares 5.0 and
   Astra DB in full.
 
-Next week, we turn this into a semantic search API with Python, embedding the
-reader's question at request time.
+[Next week](/posts/c5-cmovie-wk04-semantic-search/), we turn this into a
+semantic search API with Python, embedding the reader's question at request
+time.
 
 If you want next week's post when it lands, follow me using the social buttons
 on the [8567.me](https://8567.me) homepage.

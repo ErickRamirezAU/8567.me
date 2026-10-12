@@ -402,8 +402,9 @@ why week 2 does the word splitting at load time.
 - You get equality, ranges and `CONTAINS`, combined with `AND` across as many
   indexed columns as you like.
 
-Next week you'll build the cMovie browse API in Python on these indexes. In
-three weeks, film plots become vectors.
+[Next week](/posts/c5-cmovie-wk02-keyword-search/) you'll build the cMovie
+browse API in Python on these indexes. In three weeks, film plots become
+vectors.
 
 If you want next week's post when it lands, follow me using the social buttons
 on the [8567.me](https://8567.me) homepage.
