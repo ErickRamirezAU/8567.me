@@ -133,7 +133,7 @@ embeddings generated in batches and loaded into Astra. It's the sentence from
 the top of this post, working.
 
 <!-- markdownlint-disable-next-line MD013 -->
-### Week 5 - Why pure vector search returns the wrong films: filtered ANN with SAI in Cassandra
+### [Week 5 - Why pure vector search returns the wrong movies: filtered ANN with SAI in Cassandra](/posts/c5-cmovie-wk05-filtered-vector-search/)
 
 Concept week, CQL.
 

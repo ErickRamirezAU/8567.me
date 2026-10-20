@@ -448,8 +448,8 @@ means nearly the same thing.
 `LIMIT` is required with `ANN OF`. It can't be above 1,000 on Astra DB, and by
 default it can't on Cassandra 5.0 either ([see the 5.0
 source](https://github.com/apache/cassandra/blob/cassandra-5.0/src/java/org/apache/cassandra/index/sai/StorageAttachedIndex.java)).
-Week 5 shows what that means when you combine vector
-search with filters.
+[Week 5](/posts/c5-cmovie-wk05-filtered-vector-search/) shows what that means
+when you combine vector search with filters.
 
 ## The gotcha: a vector of the wrong size
 

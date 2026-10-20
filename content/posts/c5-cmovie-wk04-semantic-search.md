@@ -499,7 +499,7 @@ curl -s -G http://127.0.0.1:8000/movies/semantic \
 ```
 
 These are 2 of the restrictions behind the warning in the callout. [Week
-5](/posts/c5-cmovie-overview/) shows what they mean once we add filters to the
+5](/posts/c5-cmovie-wk05-filtered-vector-search/) shows what they mean once we add filters to the
 query, and why pure vector search can return the wrong movies.
 
 ## Recap
@@ -514,8 +514,8 @@ query, and why pure vector search can return the wrong movies.
   production use yet. [Week 9](/posts/c5-cmovie-overview/) compares 5.0 and
   Astra DB in full.
 
-Next week, we add filters to a vector query and find out why the answer
-isn't always the one you'd expect.
+[Next week](/posts/c5-cmovie-wk05-filtered-vector-search/), we add filters to
+a vector query and find out why the answer isn't always the one you'd expect.
 
 If you want next week's post when it lands, follow me using the social buttons
 on the [8567.me](https://8567.me) homepage.
