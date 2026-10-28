@@ -147,7 +147,7 @@ By the end you'll be able to combine SAI filters with vector ordering, and
 you'll know how filtering interacts with the number of results you get back.
 
 <!-- markdownlint-disable-next-line MD013 -->
-### Week 6 - What should I watch tonight? Build a RAG movie assistant with Python and Cassandra
+### [Week 6 - What should I watch tonight? Build a RAG movie assistant with Python and Cassandra](/posts/c5-cmovie-wk06-rag-movie-assistant/)
 
 Build week, Python.
 

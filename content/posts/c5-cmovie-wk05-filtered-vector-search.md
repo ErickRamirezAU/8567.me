@@ -379,8 +379,9 @@ screen that uses them. We don't create one in this post.
 > but the restrictions apply there too. [Week 9](/posts/c5-cmovie-overview/)
 > compares 5.0 and Astra DB in full.
 
-Next week, we hand these filtered results to an LLM and build a movie assistant
-in Python, so its suggestions come from movies that match what you asked for.
+[Next week](/posts/c5-cmovie-wk06-rag-movie-assistant/), we hand these filtered
+results to an LLM and build a movie assistant in Python, so its suggestions come
+from movies that match what you asked for.
 
 Try your own phrase and filters. The statements from this post are in
 [`tutorials/week-05/`](https://github.com/ErickRamirezAU/cassandra-5-movie-search/tree/main/tutorials/week-05)
